@@ -24,6 +24,7 @@ interface PortfolioProviderProps {
   children: React.ReactNode;
 }
 
+// PortfolioProvider component to manage portfolio state
 export const PortfolioProvider: React.FC<PortfolioProviderProps> = ({ children }) => {
   const [portfolio, setPortfolio] = useLocalStorage<PortfolioItem[]>('portfolio', []);
 

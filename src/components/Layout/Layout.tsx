@@ -1,6 +1,8 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
+import Footer from './Footer';
+import {ArrowUp} from 'lucide-react';
 
 const Layout: React.FC = () => {
   return (
@@ -9,6 +11,15 @@ const Layout: React.FC = () => {
       <main className="relative">
         <Outlet />
       </main>
+      <Footer /> 
+      
+      <button
+        className="fixed bottom-4 right-4 p-3 bg-purple-500 text-white rounded-full shadow-lg hover:bg-purple-600 transition-colors duration-300"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Scroll to top"
+      >
+        <ArrowUp />
+      </button>
       
       {/* Background Effects */}
       <div className="fixed inset-0 pointer-events-none -z-10">

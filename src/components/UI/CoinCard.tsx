@@ -1,10 +1,14 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { TrendingUp, TrendingDown, Star, Plus } from 'lucide-react';
-import { Coin } from '../../types';
-import { formatCurrency, formatPercentage, getChangeColor } from '../../utils/formatters';
-import { usePortfolio } from '../../context/PortfolioContext';
+import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { TrendingUp, TrendingDown, Star, Plus } from "lucide-react";
+import { Coin } from "../../types";
+import {
+  formatCurrency,
+  formatPercentage,
+  getChangeColor,
+} from "../../utils/formatters";
+import { usePortfolio } from "../../context/PortfolioContext";
 
 interface CoinCardProps {
   coin: Coin;
@@ -18,7 +22,7 @@ const CoinCard: React.FC<CoinCardProps> = ({ coin, index }) => {
   const handlePortfolioToggle = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    
+
     if (inPortfolio) {
       removeFromPortfolio(coin.id);
     } else {
@@ -53,11 +57,15 @@ const CoinCard: React.FC<CoinCardProps> = ({ coin, index }) => {
             onClick={handlePortfolioToggle}
             className={`absolute top-4 right-4 p-2 rounded-full transition-all duration-200 ${
               inPortfolio
-                ? 'bg-purple-500 text-white'
-                : 'bg-gray-200/50 dark:bg-gray-700/50 text-gray-600 dark:text-gray-400 hover:bg-purple-500/20 hover:text-purple-500'
+                ? "bg-purple-500 text-white"
+                : "bg-gray-200/50 dark:bg-gray-700/50 text-gray-600 dark:text-gray-400 hover:bg-purple-500/20 hover:text-purple-500"
             }`}
           >
-            {inPortfolio ? <Star className="w-4 h-4 fill-current" /> : <Plus className="w-4 h-4" />}
+            {inPortfolio ? (
+              <Star className="w-4 h-4 fill-current" />
+            ) : (
+              <Plus className="w-4 h-4" />
+            )}
           </motion.button>
 
           {/* Coin Header */}
@@ -91,7 +99,11 @@ const CoinCard: React.FC<CoinCardProps> = ({ coin, index }) => {
               <p className="text-2xl font-bold text-gray-900 dark:text-white">
                 {formatCurrency(coin.current_price)}
               </p>
-              <div className={`flex items-center space-x-1 ${getChangeColor(coin.price_change_percentage_24h)}`}>
+              <div
+                className={`flex items-center space-x-1 ${getChangeColor(
+                  coin.price_change_percentage_24h
+                )}`}
+              >
                 {isPositive ? (
                   <TrendingUp className="w-4 h-4" />
                 ) : (
@@ -102,7 +114,7 @@ const CoinCard: React.FC<CoinCardProps> = ({ coin, index }) => {
                 </span>
               </div>
             </div>
-            
+
             {/* Mini Sparkline */}
             {sparklineData.length > 0 && (
               <div className="w-20 h-12">
@@ -116,10 +128,14 @@ const CoinCard: React.FC<CoinCardProps> = ({ coin, index }) => {
                         const x = (i / (sparklineData.length - 1)) * 100;
                         const minPrice = Math.min(...sparklineData);
                         const maxPrice = Math.max(...sparklineData);
-                        const y = 50 - ((price - minPrice) / (maxPrice - minPrice)) * 50;
+                        const y =
+                          maxPrice === minPrice
+                            ? 25
+                            : 50 -
+                              ((price - minPrice) / (maxPrice - minPrice)) * 50;
                         return `${x},${y}`;
                       })
-                      .join(' ')}
+                      .join(" ")}
                   />
                 </svg>
               </div>
@@ -129,13 +145,17 @@ const CoinCard: React.FC<CoinCardProps> = ({ coin, index }) => {
           {/* Market Data */}
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
-              <span className="text-gray-500 dark:text-gray-400">Market Cap</span>
+              <span className="text-gray-500 dark:text-gray-400">
+                Market Cap
+              </span>
               <span className="text-gray-900 dark:text-white font-medium">
                 {formatCurrency(coin.market_cap)}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-500 dark:text-gray-400">Volume 24h</span>
+              <span className="text-gray-500 dark:text-gray-400">
+                Volume 24h
+              </span>
               <span className="text-gray-900 dark:text-white font-medium">
                 {formatCurrency(coin.total_volume)}
               </span>

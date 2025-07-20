@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
               <TrendingUp className="w-6 h-6 text-white" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
-              CryptoVision
+              JeyCryptoz
             </span>
           </Link>
 
