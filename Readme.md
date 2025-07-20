@@ -84,9 +84,8 @@ npm run build
 
 You can deploy this app on platforms like:
 
-* [Vercel](https://vercel.com/)
-* [Netlify](https://netlify.com/)
-* [GitHub Pages](https://pages.github.com/)
+* [Vercel](https://crypto-finale.vercel.app/)
+
 
 ## 📬 Contact
 
