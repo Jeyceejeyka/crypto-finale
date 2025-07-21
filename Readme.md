@@ -1,24 +1,19 @@
-Sure! Here's a complete and professional `README.md` file for your **JeyCrypto** project — a crypto dashboard website with dark/light mode, routing, and modern design using React, TailwindCSS, and Lucide icons.
-
----
-
-```markdown
-# 🚀 JeyCrypto
+####  JeyCrypto
 
 A modern, responsive cryptocurrency dashboard built with **React**, **TailwindCSS**, and **Lucide Icons**. JeyCrypto allows users to explore market trends, check wallet balances, and access essential crypto tools — all in a clean and user-friendly interface with dark/light mode support.
 
-## ✨ Features
+##  Features
 
-- ⚡ Fast and responsive UI
-- 🌙 Dark and light theme toggle
-- 🪙 Crypto market page
-- 💼 Wallet overview section
-- 📈 Clean layout with Lucide icons
-- ⬆️ Scroll-to-top button
-- 📫 Email link integration
-- 📱 Mobile-first design
+-  Fast and responsive UI
+-  Dark and light theme toggle
+-  Crypto market page
+-  Wallet overview section
+-  Clean layout with Lucide icons
+- ⬆ Scroll-to-top button
+-  Email link integration
+-  Mobile-first design
 
-## 🧑‍💻 Tech Stack
+##  Tech Stack
 
 - **React** (Vite or CRA)
 - **Tailwind CSS** for styling
@@ -26,7 +21,7 @@ A modern, responsive cryptocurrency dashboard built with **React**, **TailwindCS
 - **Lucide-react** for modern icons
 - TypeScript friendly components
 
-## 📂 Folder Structure
+##  Folder Structure
 
 ```
 
@@ -49,7 +44,7 @@ src/
 
 ````
 
-## 🛠️ Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -80,28 +75,28 @@ npm start      # for Create React App
 npm run build
 ```
 
-## 🌐 Deployment
+##  Deployment
 
 You can deploy this app on platforms like:
 
 * [Vercel](https://crypto-finale.vercel.app/)
 
 
-## 📬 Contact
+##  Contact
 
 Got a suggestion or bug report? Feel free to reach out:
 
 ```txt
-📧 jeyceejeyka635@gmail.com
+jeyceejeyka635@gmail.com
 ```
 
-## 📜 License
+##  License
 
 This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-### 👏 Acknowledgments
+###  Acknowledgments
 
 * [Lucide Icons](https://lucide.dev/)
 * [Tailwind CSS](https://tailwindcss.com/)
